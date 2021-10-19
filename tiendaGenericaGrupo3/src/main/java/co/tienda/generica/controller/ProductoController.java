@@ -31,6 +31,11 @@ public class ProductoController {
 		return "createProducto";
 	}
 	
+	@GetMapping("/upload")
+	public String upload() {
+		return "upload";
+	}
+	
 	@PostMapping("/save")
 	public String save(Producto producto) {
 		logg.info("Información del producto, {}",  producto);

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" 
+crossorigin="anonymous">
+<meta charset="UTF-8">
+<title>Ventas</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand">Tienda Generica</a>
+</nav>
+<nav class="nav">
+  <a class="nav-link" aria-current="page" href="#">Usuarios</a>
+  <a class="nav-link" aria-current="page" href="/clientes">Clientes</a>
+  <a class="nav-link" aria-current="page" href="/proveedores">Proveedores</a>
+  <a class="nav-link" aria-current="page" href="/productos">Productos</a>
+  <a class="nav-link" aria-current="page" href="/ventas">Ventas</a>
+  <a class="nav-link" aria-current="page" href="#">Reportes</a>
+</nav>
+<hr>
+
+<h1 align="center">Lista de ventas</h1>
+	
+<div class="container">
+<a th:href="@{ventas/createVenta}" class="btn btn-primary">Nueva venta</a>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Codigo venta</th>
+      <th scope="col"> Cliente</th>
+      <th scope="col"> Usuario</th>
+      <th scope="col">Valor Venta</th>
+      <th scope="col">IVA</th>
+      <th scope="col">Total Venta</th>
+      <th scope="col">Editar</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="venta:${ventas}">
+      <td scope="row" th:text="${ventas.codigo_venta}"></td>
+      <td th:text="${ventas.cedula_cliente}"></td>
+      <td th:text="${ventas.cedula_usuario}"></td>
+      <td th:text="${ventas.valor_venta}"></td>
+      <td th:text="${ventas.ivaventa}"></td>
+      <td th:text="${ventas.total_venta}"></td>
+      <td> <a th:href="@{/ventas/editVenta/{codigo_venta} (codigo_venta=${ventas.codigo_venta})}" class="btn btn-warning">Editar</a></td>
+    
+    </tr>    
+  </tbody>
+</table>
+</div>
+</body>
+</html>

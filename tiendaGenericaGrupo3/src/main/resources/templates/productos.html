@@ -18,7 +18,7 @@ crossorigin="anonymous">
   <a class="nav-link" aria-current="page" href="/clientes">Clientes</a>
   <a class="nav-link" aria-current="page" href="/proveedores">Proveedores</a>
   <a class="nav-link" aria-current="page" href="/productos">Productos</a>
-  <a class="nav-link" aria-current="page" href="#">Ventas</a>
+  <a class="nav-link" aria-current="page" href="/ventas">Ventas</a>
   <a class="nav-link" aria-current="page" href="#">Reportes</a>
 </nav>
 <hr>
@@ -27,7 +27,7 @@ crossorigin="anonymous">
 	
 <div class="container">
 <a th:href="@{productos/createProducto}" class="btn btn-primary">Nuevo Producto</a>
-<a class="btn btn-secondary">Cargar documento</a>
+<a th:href="@{productos/upload}" class="btn btn-secondary">Cargar Archivo</a>
 
 <table class="table">
   <thead>

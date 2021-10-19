@@ -44,13 +44,13 @@ crossorigin="anonymous">
   </thead>
   <tbody>
     <tr th:each="venta:${ventas}">
-      <td scope="row" th:text="${ventas.codigo_venta}"></td>
-      <td th:text="${ventas.cedula_cliente}"></td>
-      <td th:text="${ventas.cedula_usuario}"></td>
-      <td th:text="${ventas.valor_venta}"></td>
-      <td th:text="${ventas.ivaventa}"></td>
-      <td th:text="${ventas.total_venta}"></td>
-      <td> <a th:href="@{/ventas/editVenta/{codigo_venta} (codigo_venta=${ventas.codigo_venta})}" class="btn btn-warning">Editar</a></td>
+      <td scope="row" th:text="${venta.codigo_venta}"></td>
+      <td th:text="${venta.cedula_cliente}"></td>
+      <td th:text="${venta.cedula_usuario}"></td>
+      <td th:text="${venta.valor_venta}"></td>
+      <td th:text="${venta.ivaventa}"></td>
+      <td th:text="${venta.total_venta}"></td>
+      <td> <a th:href="@{/ventas/editVenta/{codigo_venta} (codigo_venta=${venta.codigo_venta})}" class="btn btn-warning">Editar</a></td>
     
     </tr>    
   </tbody>

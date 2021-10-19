@@ -16,46 +16,23 @@ crossorigin="anonymous">
 		<form th:action="@{/ventas/save}" method="post">
 		
 				<div class="mb-3">
-		  				<label for="formGroupExampleInput" class="form-label">Nombre producto</label>
+		  				<label for="formGroupExampleInput" class="form-label">Usuario</label>
 		  				<input type="text" class="form-control" 
-		  				id="formGroupExampleInput" name="nombre_producto"
-		  				placeholder="Ingresar el nombre del producto"> 
+		  				id="formGroupExampleInput" name="id_usuario"
+		  				 readonly> 
 					</div>
-					<div class="mb-3">
-		  				<label for="formGroupExampleInput2" class="form-label">Nit Proveedor</label>
-		  				<input type="text" class="form-control" 
-		  				id="formGroupExampleInput2" name="nitproveedor"
-		  				placeholder="Ingresar la descripción del producto">
+				<div class="mb-3">
+		  				<label for="formGroupExampleInput" class="form-label">Cliente</label>
+		  				<select th:field="*{clientes}" type="text" class="form-control" id="formGroupExampleInput" name="cedula_clienteo">
+		  				<option th:each="cliente:${clientes}"
+		  				th:value="${cliente.id}"
+		  				th:text="${cliente.id}"
+		  				/>
+		  				
+		  				
+		  				</select> 
 					</div>
-					<div class="mb-3">
-						<label for="formGroupExampleInput3" class="form-label">Precio del producto</label>
-					</div>
-					<div class="input-group mb-3">
-		  				<span class="input-group-text">$</span>
-		  				<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"
-		  				id="formGroupExampleInput3" name="precio_compra"
-		  				placeholder="Ingrese el precio del producto">
-		  				<span class="input-group-text">.00</span>
-					</div>
-					<div class="mb-3">
-						<label for="formGroupExampleInput3" class="form-label">IVA Compra</label>
-					</div>
-					<div class="input-group mb-3">
-		  				<span class="input-group-text">%</span>
-		  				<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"
-		  				id="formGroupExampleInput4" name="ivacompra"
-		  				placeholder="Ingrese el precio del producto">
-					</div>
-					<div class="mb-3">
-						<label for="formGroupExampleInput3" class="form-label">Precio venta</label>
-					</div>
-					<div class="input-group mb-3">
-		  				<span class="input-group-text">$</span>
-		  				<input type="text" class="form-control" 
-		  				id="formGroupExampleInput5" name="precio_venta"
-		  				placeholder="Ingrese el precio del producto">
-		  				<span class="input-group-text">.00</span>
-					</div>
+				
 					
 				<button type="submit" class="btn btn-success">Guardar</button>	
 				

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import co.tienda.generica.model.Cliente;
 import co.tienda.generica.model.Ventas;
+import co.tienda.generica.repository.ClienteRepository;
 import co.tienda.generica.repository.ventasRepository;
 import co.tienda.generica.service.IClienteService;
 
@@ -22,7 +23,10 @@ import co.tienda.generica.service.IClienteService;
 public class VentaController {
 	private final Logger logg = LoggerFactory.getLogger(Ventas.class);
 	@Autowired
-	private ventasRepository ventasRepository;
+		private ventasRepository ventasRepository;
+	@Autowired
+	private ClienteRepository clienteRepository;
+	
 	@Autowired
 	private IClienteService ClienteService;
 	
@@ -36,7 +40,8 @@ public class VentaController {
 	public String create(Model model) {
 		
 		//List<Cliente> lisClientes= ClienteService.ListaClientes();
-		//model.addAttribute("clientes",lisClientes);
+		model.addAttribute("clientes", clienteRepository.findAll());
+//		model.addAttribute("clientes",lisClientes);
 		return "createVenta";
 	}
 	

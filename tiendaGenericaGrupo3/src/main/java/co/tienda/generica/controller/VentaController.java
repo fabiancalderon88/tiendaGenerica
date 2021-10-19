@@ -35,8 +35,8 @@ public class VentaController {
 	@GetMapping("/createVenta")
 	public String create(Model model) {
 		
-		List<Cliente> lisClientes= ClienteService.ListaClientes();
-		model.addAttribute("clientes",lisClientes);
+		//List<Cliente> lisClientes= ClienteService.ListaClientes();
+		//model.addAttribute("clientes",lisClientes);
 		return "createVenta";
 	}
 	

@@ -21,17 +21,17 @@ crossorigin="anonymous">
 		  				id="formGroupExampleInput" name="id_usuario"
 		  				 readonly> 
 					</div>
-				<div class="mb-3">
-		  				<label for="formGroupExampleInput" class="form-label">Cliente</label>
-		  				<select th:field="*{clientes}" type="text" class="form-control" id="formGroupExampleInput" name="cedula_clienteo">
-		  				<option th:each="cliente:${clientes}"
-		  				th:value="${cliente.id}"
-		  				th:text="${cliente.id}"
-		  				/>
+<!-- 				<div class="mb-3"> -->
+<!-- 		  				<label for="formGroupExampleInput" class="form-label">Cliente</label> -->
+<!-- 		  				<select th:field="*{clientes}" type="text" class="form-control" id="formGroupExampleInput" name="cedula_clienteo"> -->
+<!-- 		  				<option th:each="cliente:${clientes}" -->
+<!-- 		  				th:value="${cliente.id}" -->
+<!-- 		  				th:text="${cliente.id}" -->
+<!-- 		  				/> -->
 		  				
 		  				
-		  				</select> 
-					</div>
+<!-- 		  				</select>  -->
+<!-- 					</div> -->
 				
 					
 				<button type="submit" class="btn btn-success">Guardar</button>	

@@ -32,6 +32,12 @@ public class UsuarioController {
 		return "createUsuario";
 	}
 	
+	@GetMapping("/reporteUsuario")
+	public String reporteUsuario(Model model) {
+		model.addAttribute("usuarios", usuarioRepository.findAll());
+		return "reporteUsuarios";
+	}
+	
 	@PostMapping("/save")
 	public String save(Usuario usuario) {
 		logg.info("Información del usuario, {}",  usuario);

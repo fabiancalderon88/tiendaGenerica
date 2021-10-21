@@ -32,6 +32,12 @@ public class ProveedorController {
 		return "createProveedor";
 	}
 	
+	@GetMapping("/reporteProveedor")
+	public String reporteProveedor(Model model) {
+		model.addAttribute("proveedores", proveedorRepository.findAll());
+		return "reporteProveedores";
+	}
+	
 	@PostMapping("/save")
 	public String save(Proveedor proveedor) {
 		logg.info("Información del Proveedor, {}",  proveedor);

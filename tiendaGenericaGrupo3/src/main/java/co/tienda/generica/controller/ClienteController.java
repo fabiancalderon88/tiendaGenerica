@@ -32,9 +32,15 @@ public class ClienteController {
 		return "clientes";
 	}
 	
-	@GetMapping("/createCliente") // http://localhost:8383/productos/create
+	@GetMapping("/createCliente")
 	public String create() {
 		return "createCliente";
+	}
+	
+	@GetMapping("/reporteCliente")
+	public String reporteCliente(Model model) {
+		model.addAttribute("clientes", clienteRepository.findAll());
+		return "reporteClientes";
 	}
 	
 	@PostMapping("/save")

@@ -14,12 +14,12 @@ crossorigin="anonymous">
     <a class="navbar-brand">Tienda Generica</a>
 </nav>
 <nav class="nav">
-  <a class="nav-link" aria-current="page" href="#">Usuarios</a>
+  <a class="nav-link" aria-current="page" href="/usuarios">Usuarios</a>
   <a class="nav-link" aria-current="page" href="/clientes">Clientes</a>
   <a class="nav-link" aria-current="page" href="/proveedores">Proveedores</a>
   <a class="nav-link" aria-current="page" href="/productos">Productos</a>
   <a class="nav-link" aria-current="page" href="/ventas">Ventas</a>
-  <a class="nav-link" aria-current="page" href="#">Reportes</a>
+  <a class="nav-link" aria-current="page" href="/reporte">Reportes</a>
 </nav>
 <hr>
 
@@ -28,7 +28,6 @@ crossorigin="anonymous">
 <div class="container">
 <a th:href="@{productos/createProducto}" class="btn btn-primary">Nuevo Producto</a>
 <a th:href="@{productos/upload}" class="btn btn-secondary">Cargar Archivo</a>
-
 <table class="table">
   <thead>
     <tr>

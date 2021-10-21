@@ -22,5 +22,9 @@ public class AppController {
 	public String admin() {
 		return "admin";
 	}
+	@GetMapping("/reporte")
+	public String reporte() {
+		return "reportes";
+	}
 	
 }

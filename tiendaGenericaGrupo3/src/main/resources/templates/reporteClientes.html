@@ -5,7 +5,7 @@
 integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" 
 crossorigin="anonymous">
 <meta charset="UTF-8">
-<title>Clientes</title>
+<title>Reporte de clientes</title>
 </head>
 <body>
 
@@ -25,8 +25,6 @@ crossorigin="anonymous">
 <h1 align="center">Lista de clientes</h1>
 	
 <div class="container">
-<a th:href="@{clientes/createCliente}" class="btn btn-primary"> Nuevo cliente</a>
-<br>
 <br>
 	<table class="table">
   <thead>
@@ -36,8 +34,6 @@ crossorigin="anonymous">
       <th scope="col">Dirección</th>
       <th scope="col">No. de Teléfono </th>
       <th scope="col">Correo electrónico</th>
-      <th scope="col">Editar</th>
-      <th scope="col">Eliminar</th>
     </tr>
   </thead>
   <tbody>
@@ -47,8 +43,6 @@ crossorigin="anonymous">
       <td th:text="${cliente.direccion_cliente}"></td>
       <td th:text="${cliente.telefono_cliente}"></td>
       <td th:text="${cliente.email_cliente}"></td>
-      <td> <a th:href="@{/clientes/editCliente/{cedula_cliente} (cedula_cliente=${cliente.cedula_cliente})}" class="btn btn-warning">Editar</a></td>
-      <td> <a th:href="@{/clientes/delete/{cedula_cliente} (cedula_cliente=${cliente.cedula_cliente})}" class="btn btn-danger">Eliminar</a></td>
     </tr>    
   </tbody>
 </table>

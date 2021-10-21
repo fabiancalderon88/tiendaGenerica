@@ -5,7 +5,7 @@
 integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" 
 crossorigin="anonymous">
 <meta charset="UTF-8">
-<title>Clientes</title>
+<title>Reporte proveedores</title>
 </head>
 <body>
 
@@ -22,33 +22,27 @@ crossorigin="anonymous">
   <a class="nav-link" aria-current="page" href="/reporte">Reportes</a>
 </nav>
 <hr>
-<h1 align="center">Lista de clientes</h1>
+
+<h1 align="center">Lista Proveedores</h1>
 	
 <div class="container">
-<a th:href="@{clientes/createCliente}" class="btn btn-primary"> Nuevo cliente</a>
-<br>
-<br>
 	<table class="table">
   <thead>
-    <tr class="table-active">
-      <th scope="col">No. de Cédula</th>
-      <th scope="col">Nombre completo</th>
-      <th scope="col">Dirección</th>
-      <th scope="col">No. de Teléfono </th>
-      <th scope="col">Correo electrónico</th>
-      <th scope="col">Editar</th>
-      <th scope="col">Eliminar</th>
+    <tr>
+      <th scope="col">Nit Proveedor</th>
+      <th scope="col">Nombre del proveedor</th>
+      <th scope="col">Dirección proveedor</th>
+      <th scope="col">Ciudad proveedor</th>
+      <th scope="col">Teléfono proveedor</th>
     </tr>
   </thead>
   <tbody>
-    <tr th:each="cliente:${clientes}">
-      <td scope="row" th:text="${cliente.cedula_cliente}"></td>
-      <td th:text="${cliente.nombre_cliente}"></td>
-      <td th:text="${cliente.direccion_cliente}"></td>
-      <td th:text="${cliente.telefono_cliente}"></td>
-      <td th:text="${cliente.email_cliente}"></td>
-      <td> <a th:href="@{/clientes/editCliente/{cedula_cliente} (cedula_cliente=${cliente.cedula_cliente})}" class="btn btn-warning">Editar</a></td>
-      <td> <a th:href="@{/clientes/delete/{cedula_cliente} (cedula_cliente=${cliente.cedula_cliente})}" class="btn btn-danger">Eliminar</a></td>
+    <tr th:each="proveedor:${proveedores}">
+      <td scope="row" th:text="${proveedor.nitproveedor}"></td>
+      <td th:text="${proveedor.nombre_proveedor}"></td>
+      <td th:text="${proveedor.direccion_proveedor}"></td>
+      <td th:text="${proveedor.ciudad_proveedor}"></td>
+      <td th:text="${proveedor.telefono_proveedor}"></td>
     </tr>    
   </tbody>
 </table>

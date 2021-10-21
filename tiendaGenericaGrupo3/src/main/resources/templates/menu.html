@@ -5,7 +5,7 @@
 integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" 
 crossorigin="anonymous">
 <meta charset="UTF-8">
-<title>Creación de clientes</title>
+<title>Menú inicio</title>
 </head>
 <body>
 
@@ -15,12 +15,12 @@ crossorigin="anonymous">
     <a class="navbar-brand" th:inline="text">Bienvenido: [[${#httpServletRequest.remoteUser}]]</a>
 </nav>
 <nav class="nav">
-  <a class="nav-link" aria-current="page" href="#">Usuarios</a>
+  <a class="nav-link" aria-current="page" href="/usuarios">Usuarios</a>
   <a class="nav-link" aria-current="page" href="/clientes">Clientes</a>
   <a class="nav-link" aria-current="page" href="/proveedores">Proveedores</a>
   <a class="nav-link" aria-current="page" href="/productos">Productos</a>
   <a class="nav-link" aria-current="page" href="/ventas">Ventas</a>
-  <a class="nav-link" aria-current="page" href="#">Reportes</a>
+  <a class="nav-link" aria-current="page" href="/reporte">Reportes</a>
 </nav>
 <hr>
 	<form th:action="@{/logout}" method="post">
